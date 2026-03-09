@@ -1,0 +1,70 @@
+# =============================================================================
+#  signatures.txt  —  Malware Signature Database (SHA-256 Hashes)
+# =============================================================================
+#
+#  FORMAT RULES:
+#   • One SHA-256 hash per line (exactly 64 hexadecimal characters).
+#   • Lines starting with '#' are treated as comments and are ignored.
+#   • Blank lines are ignored.
+#   • Hashes are case-insensitive (the scanner normalises to lowercase).
+#
+#  HOW TO ADD REAL SIGNATURES:
+#   1. Obtain a confirmed malware sample hash from a trusted threat-intel
+#      feed (e.g. MalwareBazaar, VirusTotal, MISP, or YARA rule sets).
+#   2. Paste the 64-character SHA-256 digest on its own line below.
+#   3. Optionally add a comment on the preceding line for reference.
+#
+#  DISCLAIMER:
+#   The hashes below are FICTIONAL test values generated for demonstration.
+#   They do NOT correspond to any real malware. The scanner will only flag
+#   a file if its hash exactly matches one of the entries here.
+#
+#  ETHICAL NOTICE:
+#   Never use this tool to scan systems you do not own or have explicit
+#   written permission to test. Unauthorised scanning may be illegal.
+#
+# =============================================================================
+
+# ── Simulated Trojan samples ──────────────────────────────────────────────────
+
+# FakeTrojan.Win32.Agent — Variant A (fictional hash)
+aabbcc1122334455aabbcc1122334455aabbcc1122334455aabbcc1122334455
+
+# FakeTrojan.Win32.Agent — Variant B (fictional hash)
+deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+
+# ── Simulated Ransomware samples ─────────────────────────────────────────────
+
+# FakeRansomware.Locker.v1 (fictional hash)
+cafebabe00112233cafebabe00112233cafebabe00112233cafebabe00112233
+
+# FakeRansomware.Locker.v2 (fictional hash)
+1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef
+
+# ── Simulated Spyware samples ─────────────────────────────────────────────────
+
+# FakeSpyware.Keylogger.x64 (fictional hash)
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+
+# ── Simulated Worm samples ────────────────────────────────────────────────────
+
+# FakeWorm.NetworkSpread (fictional hash)
+0000000000000000000000000000000000000000000000000000000000000001
+
+# =============================================================================
+#  TO TEST THE SCANNER:
+#
+#  Step 1 – Create a dummy file:
+#            echo "this is a test" > test_malware.txt
+#
+#  Step 2 – Compute its real SHA-256 hash:
+#            Windows PowerShell : Get-FileHash test_malware.txt -Algorithm SHA256
+#            Linux / macOS      : sha256sum test_malware.txt
+#
+#  Step 3 – Paste the resulting hash into this file on a new line.
+#
+#  Step 4 – Run antivirus.py and scan the folder containing test_malware.txt.
+#            The scanner will flag and quarantine the file.
+# =============================================================================
+# Auto-injected test hash for CI
+9ef3db2bf9e9ad0124d4fa4c6ced509a72bade1bab24c804ff699ef155c7d808
